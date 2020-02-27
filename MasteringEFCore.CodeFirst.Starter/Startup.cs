@@ -33,11 +33,8 @@ namespace MasteringEFCore.CodeFirst.Starter
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
-            string teste = Configuration.GetConnectionString("DefaultConnection");
-
-
             services.AddDbContext<BlogContext>(options =>
-                options.UseSqlServer(teste));
+                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
