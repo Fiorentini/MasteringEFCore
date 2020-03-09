@@ -27,9 +27,6 @@ namespace MasteringEFCore.BuildRelationships.Data
             modelBuilder.Entity<Blog>()
                 .HasMany(x => x.Posts)
                 .WithOne();
-            modelBuilder.Entity<Blog>()
-                .Property(x => x.Url)
-                .IsRequired();
             modelBuilder.Entity<Post>().ToTable("Post");
             modelBuilder.Entity<Post>()
                 .HasOne(x => x.Blog)
